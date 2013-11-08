@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.zanox.maven</groupId>
+        <artifactId>master-pom-common</artifactId>
+        <version>1.50</version>
+    </parent>
+
+    <groupId>com.zanox.internal.productmanufacturernormalization</groupId>
+    <artifactId>productmanufacturernormalization</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <textmining.version>1.0.1</textmining.version>
+    </properties>
+
+    <scm>
+        <connection>scm:git:https://github.com/zanox/productmanufacturernormalization.git</connection>
+        <developerConnection>scm:git:https://github.com/zanox/productmanufacturernormalization.git</developerConnection>
+        <url>https://github.com/zanox/productmanufacturernormalization.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <ciManagement>
+        <system>Hudson</system>
+        <url>http://jenkins.zanox.com/job/productmanufacturernormalization</url>
+    </ciManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.zanox.lib.textmining</groupId>
+            <artifactId>textmining</artifactId>
+            <version>${textmining.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>xerces</groupId>
+                    <artifactId>xercesImpl</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+</project>
